@@ -1,0 +1,36 @@
+enabled:
+  - 'network.*'
+  - 'cpu*'
+  - 'disk.*'
+  - 'memory.*'
+
+labels:
+
+  - '*':
+    - __name: '"os_" + name.replace(".", "_")'
+    - __value: volume
+    - user_id: user_id
+    - resource_id: resource_id
+    - tenant_id: project_id
+    - __grouping_key: '"resource_id".split(",")'
+
+
+  - cpu*:
+    - instance_id: resource_id
+
+  - memory*:
+      - instance_id: resource_id
+
+  - disk*:
+      - instance_id: resource_id
+
+  - disk.device.*:
+    - instance_id: resource_id[:36]
+
+  - network.*:
+    - instance_id: uuid4regex.search(resource_id).group(0)
+
+  - ip.floating:
+    - ip_address: resource_metadata['floating_ip_address']
+    - operation: resource_metadata['event_type']
+
