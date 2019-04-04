@@ -29,6 +29,91 @@
         "x": 0,
         "y": 0
       },
+      "id": 12,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "os_compute_node_cpu_percent",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{host}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Compute CPU",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "percentunit",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
       "id": 10,
       "legend": {
         "avg": false,
@@ -56,7 +141,7 @@
           "expr": "os_network_incoming_bytes",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{instance}} ({{user}})",
           "refId": "A"
         }
       ],
@@ -66,7 +151,7 @@
       "timeShift": null,
       "title": "Network Incoming Bytes",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -111,7 +196,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 16
       },
       "id": 8,
       "legend": {
@@ -137,7 +222,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(os_cpu_util) by (host)",
+          "expr": "sum(os_cpu_util) by (host_id)",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{host}}",
@@ -195,7 +280,7 @@
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 23
       },
       "id": 6,
       "legend": {
@@ -287,7 +372,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 29
       },
       "id": 2,
       "legend": {
@@ -326,7 +411,7 @@
       "timeShift": null,
       "title": "CPU Util",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -371,7 +456,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 36
       },
       "id": 4,
       "legend": {
@@ -485,5 +570,5 @@
   "timezone": "",
   "title": "New dashboard Copy",
   "uid": "9BOm1f6ik",
-  "version": 3
+  "version": 1
 }
