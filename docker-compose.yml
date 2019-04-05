@@ -28,7 +28,14 @@ services:
   fiprom:
     image: gabrielegiammatteo/fiware-prometheus-publisher:develop
     volumes:
-      - ./fiprom/:/config/
+      - "${FIWARE_MON_CONFIG:-./}/:/config/"
+
+  prometheus-openstack-exporter:
+    image: gabrielegiammatteo/prometheus-openstack-exporter:develop
+    ports:
+      - "9183:9183"
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/poe.env"
 
 volumes:
   grafana_data: {}

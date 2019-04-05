@@ -1,0 +1,734 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 3,
+  "iteration": 1554492639024,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "os_network_incoming_bytes{tenant=\"$tenant_name\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        },
+        {
+          "expr": "- os_network_outgoing_bytes{tenant=\"$tenant_name\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Panel Title",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "decbytes",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "id": 2,
+      "interval": "",
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "hideEmpty": false,
+        "max": true,
+        "min": true,
+        "show": true,
+        "sort": "min",
+        "sortDesc": false,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "os_cpu_util{tenant='$tenant_name'}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Util",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "id": 4,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "os_network_incoming_bytes_rate{tenant='$tenant_name'}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        },
+        {
+          "expr": "- os_network_outgoing_bytes_rate{tenant='$tenant_name'}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Network Traffic",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "Bps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "schemaVersion": 18,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "tags": [
+            {
+              "selected": true,
+              "text": "labrm.projects",
+              "values": [
+                "interopEHRate",
+                "cloudperfect testbed",
+                "DMCoach",
+                "ETICS",
+                "OPENREQ"
+              ],
+              "valuesText": "interopEHRate + cloudperfect testbed + DMCoach + ETICS + OPENREQ"
+            }
+          ],
+          "text": "DMCoach + ETICS + OPENREQ + cloudperfect testbed + interopEHRate",
+          "value": "DMCoach"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(tenant)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Tenant",
+        "multi": false,
+        "name": "tenant_name",
+        "options": [
+          {
+            "selected": false,
+            "text": "A4BLUE",
+            "value": "A4BLUE"
+          },
+          {
+            "selected": false,
+            "text": "ASGARD",
+            "value": "ASGARD"
+          },
+          {
+            "selected": false,
+            "text": "BigClouT",
+            "value": "BigClouT"
+          },
+          {
+            "selected": false,
+            "text": "Cloud Organization",
+            "value": "Cloud Organization"
+          },
+          {
+            "selected": false,
+            "text": "DMCoach",
+            "value": "DMCoach"
+          },
+          {
+            "selected": false,
+            "text": "DOCKERTEST",
+            "value": "DOCKERTEST"
+          },
+          {
+            "selected": false,
+            "text": "ETICS",
+            "value": "ETICS"
+          },
+          {
+            "selected": true,
+            "text": "MellusoM cloud",
+            "value": "MellusoM cloud"
+          },
+          {
+            "selected": false,
+            "text": "OPENREQ",
+            "value": "OPENREQ"
+          },
+          {
+            "selected": false,
+            "text": "Raffaela cloud",
+            "value": "Raffaela cloud"
+          },
+          {
+            "selected": false,
+            "text": "SERENA",
+            "value": "SERENA"
+          },
+          {
+            "selected": false,
+            "text": "SSSA_ACCRA cloud",
+            "value": "SSSA_ACCRA cloud"
+          },
+          {
+            "selected": false,
+            "text": "Scrapp - FIWARE Cloud",
+            "value": "Scrapp - FIWARE Cloud"
+          },
+          {
+            "selected": false,
+            "text": "SemIoTics",
+            "value": "SemIoTics"
+          },
+          {
+            "selected": false,
+            "text": "WeReha-Magic-PCP",
+            "value": "WeReha-Magic-PCP"
+          },
+          {
+            "selected": false,
+            "text": "Wizard cloud",
+            "value": "Wizard cloud"
+          },
+          {
+            "selected": false,
+            "text": "alessiocamillo cloud",
+            "value": "alessiocamillo cloud"
+          },
+          {
+            "selected": false,
+            "text": "alfonso-3 cloud",
+            "value": "alfonso-3 cloud"
+          },
+          {
+            "selected": false,
+            "text": "ancappa cloud",
+            "value": "ancappa cloud"
+          },
+          {
+            "selected": false,
+            "text": "ariglianov@gmail.com cloud",
+            "value": "ariglianov@gmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "asirchia cloud",
+            "value": "asirchia cloud"
+          },
+          {
+            "selected": false,
+            "text": "canduci.davide93@gmail.com cloud",
+            "value": "canduci.davide93@gmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "ce4laplata",
+            "value": "ce4laplata"
+          },
+          {
+            "selected": false,
+            "text": "cloudperfect testbed",
+            "value": "cloudperfect testbed"
+          },
+          {
+            "selected": false,
+            "text": "cristinaleiva81@gmail.com cloud",
+            "value": "cristinaleiva81@gmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "daniel.arribas@ntasys.com cloud",
+            "value": "daniel.arribas@ntasys.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "davide cloud",
+            "value": "davide cloud"
+          },
+          {
+            "selected": false,
+            "text": "davidestorelli cloud",
+            "value": "davidestorelli cloud"
+          },
+          {
+            "selected": false,
+            "text": "dbarranm@everis.com cloud",
+            "value": "dbarranm@everis.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "developerks93@gmail.com cloud",
+            "value": "developerks93@gmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "e.cloud10.tid@telefonica.com cloud",
+            "value": "e.cloud10.tid@telefonica.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "edi",
+            "value": "edi"
+          },
+          {
+            "selected": false,
+            "text": "eng-pilot-01 cloud",
+            "value": "eng-pilot-01 cloud"
+          },
+          {
+            "selected": false,
+            "text": "eng.servify@gmail.com cloud",
+            "value": "eng.servify@gmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "figlobal cloud",
+            "value": "figlobal cloud"
+          },
+          {
+            "selected": false,
+            "text": "fiware.cityenabler.ge@gmail.com cloud",
+            "value": "fiware.cityenabler.ge@gmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "fraiadan cloud",
+            "value": "fraiadan cloud"
+          },
+          {
+            "selected": false,
+            "text": "g.bagnato95@gmail.com cloud",
+            "value": "g.bagnato95@gmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "german@hopu.eu cloud",
+            "value": "german@hopu.eu cloud"
+          },
+          {
+            "selected": false,
+            "text": "gianluca_isgro cloud",
+            "value": "gianluca_isgro cloud"
+          },
+          {
+            "selected": false,
+            "text": "gleisonsoaresb@gmail.com cloud",
+            "value": "gleisonsoaresb@gmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "goffredi cloud",
+            "value": "goffredi cloud"
+          },
+          {
+            "selected": false,
+            "text": "igor.despot@mht.net cloud",
+            "value": "igor.despot@mht.net cloud"
+          },
+          {
+            "selected": false,
+            "text": "interopEHRate",
+            "value": "interopEHRate"
+          },
+          {
+            "selected": false,
+            "text": "is3.eng.it cloud",
+            "value": "is3.eng.it cloud"
+          },
+          {
+            "selected": false,
+            "text": "labpsi cloud",
+            "value": "labpsi cloud"
+          },
+          {
+            "selected": false,
+            "text": "lapo cloud",
+            "value": "lapo cloud"
+          },
+          {
+            "selected": false,
+            "text": "m.emald@deusto cloud",
+            "value": "m.emald@deusto cloud"
+          },
+          {
+            "selected": false,
+            "text": "marco.cucchi@amigoclimate.com cloud",
+            "value": "marco.cucchi@amigoclimate.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "marco_pinnella cloud",
+            "value": "marco_pinnella cloud"
+          },
+          {
+            "selected": false,
+            "text": "marcomat cloud",
+            "value": "marcomat cloud"
+          },
+          {
+            "selected": false,
+            "text": "marisa cloud",
+            "value": "marisa cloud"
+          },
+          {
+            "selected": false,
+            "text": "mauropecetti cloud",
+            "value": "mauropecetti cloud"
+          },
+          {
+            "selected": false,
+            "text": "nonsolomafie@gmail.com cloud",
+            "value": "nonsolomafie@gmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "oedipus cloud",
+            "value": "oedipus cloud"
+          },
+          {
+            "selected": false,
+            "text": "oias4cadamin@gmail.com cloud",
+            "value": "oias4cadamin@gmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "paolo.fabriani@eng.it",
+            "value": "paolo.fabriani@eng.it"
+          },
+          {
+            "selected": false,
+            "text": "pasquale cloud",
+            "value": "pasquale cloud"
+          },
+          {
+            "selected": false,
+            "text": "patitucci cloud",
+            "value": "patitucci cloud"
+          },
+          {
+            "selected": false,
+            "text": "pglvnt95h59f158p@studenti.unime.it cloud",
+            "value": "pglvnt95h59f158p@studenti.unime.it cloud"
+          },
+          {
+            "selected": false,
+            "text": "piespinn@eng.it-cloud",
+            "value": "piespinn@eng.it-cloud"
+          },
+          {
+            "selected": false,
+            "text": "rinofinazzo cloud",
+            "value": "rinofinazzo cloud"
+          },
+          {
+            "selected": false,
+            "text": "robsont36@hotmail.com cloud",
+            "value": "robsont36@hotmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "rosiberto6@hotmail.com cloud",
+            "value": "rosiberto6@hotmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "s1073743 cloud",
+            "value": "s1073743 cloud"
+          },
+          {
+            "selected": false,
+            "text": "select4cities.testbed@gmail.com cloud",
+            "value": "select4cities.testbed@gmail.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "stefano.iaconelli@cefriel.com cloud",
+            "value": "stefano.iaconelli@cefriel.com cloud"
+          },
+          {
+            "selected": false,
+            "text": "stefano.pino@eng.it cloud",
+            "value": "stefano.pino@eng.it cloud"
+          },
+          {
+            "selected": false,
+            "text": "storm cloud",
+            "value": "storm cloud"
+          },
+          {
+            "selected": false,
+            "text": "valentina.pagliuca@outlook.it cloud",
+            "value": "valentina.pagliuca@outlook.it cloud"
+          },
+          {
+            "selected": false,
+            "text": "wagambuladerick@gmail.com cloud",
+            "value": "wagambuladerick@gmail.com cloud"
+          }
+        ],
+        "query": "label_values(tenant)",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "label_values(os_cpu_util{tenant_group='$tag'}, tenant)",
+        "tags": [
+          "labrm.projects",
+          "testing"
+        ],
+        "tagsQuery": "label_values(tenant_group)",
+        "type": "query",
+        "useTags": true
+      }
+    ]
+  },
+  "time": {
+    "from": "now-12h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "By Tenant",
+  "uid": "uVYqnweiz",
+  "version": 3
+}
