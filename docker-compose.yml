@@ -36,6 +36,8 @@ services:
       - "9183:9183"
     env_file:
       - "${FIWARE_MON_CONFIG:-./}/poe.env"
+    volumes:
+      - "${FIWARE_MON_CONFIG:-./}/:/config/"
 
 volumes:
   grafana_data: {}
