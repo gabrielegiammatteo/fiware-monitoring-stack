@@ -19,25 +19,23 @@ services:
       - '--storage.tsdb.path=/prometheus'
       - '--web.console.libraries=/usr/share/prometheus/console_libraries'
       - '--web.console.templates=/usr/share/prometheus/consoles'
-    ports:
-      - "9090:9090"
- 
+
   pushgateway:
     image: prom/pushgateway:v0.7.0
   
   fiprom:
     image: gabrielegiammatteo/fiware-prometheus-publisher:develop
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
     volumes:
-      - "${FIWARE_MON_CONFIG:-./}/:/config/"
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-cache:/tmp/cache"
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-names:/fiprom-names"
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/fiprom-groups"
 
   prometheus-openstack-exporter:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
-    ports:
-      - "9183:9183"
     env_file:
-      - "${FIWARE_MON_CONFIG:-./}/poe.env"
-    volumes:
-      - "${FIWARE_MON_CONFIG:-./}/:/config/"
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
 
 volumes:
   grafana_data: {}
