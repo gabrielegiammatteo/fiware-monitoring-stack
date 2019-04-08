@@ -28,7 +28,12 @@ scrape_configs:
     honor_labels: true
     static_configs:
       - targets: ['pushgateway:9091']
+    metric_relabel_configs:
+      - source_labels: [cloud]
+        target_label: fiware_region
 
   - job_name: 'poe'
     static_configs:
       - targets: ['prometheus-openstack-exporter:9183']
+
+
