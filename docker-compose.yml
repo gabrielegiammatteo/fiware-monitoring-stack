@@ -36,6 +36,8 @@ services:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
     env_file:
       - "${FIWARE_MON_CONFIG:-./}/config.env"
+    volumes:
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-names:/fiprom-names"
 
 volumes:
   grafana_data: {}
