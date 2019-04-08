@@ -37,7 +37,7 @@ services:
     env_file:
       - "${FIWARE_MON_CONFIG:-./}/config.env"
     volumes:
-      - "${FIWARE_MON_CONFIG:-./}/fiprom-names:/fiprom-names"
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf"
 
 volumes:
   grafana_data: {}
