@@ -29,15 +29,15 @@ services:
       - "${FIWARE_MON_CONFIG:-./}/config.env"
     volumes:
       - "${FIWARE_MON_CONFIG:-./}/fiprom-cache:/tmp/cache"
-      - "${FIWARE_MON_CONFIG:-./}/fiprom-names:/fiprom-names"
-      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/fiprom-groups"
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-names:/fiprom-names:ro"
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/fiprom-groups:ro"
 
   prometheus-openstack-exporter:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
     env_file:
       - "${FIWARE_MON_CONFIG:-./}/config.env"
     volumes:
-      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf"
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf:ro"
 
 volumes:
   grafana_data: {}
