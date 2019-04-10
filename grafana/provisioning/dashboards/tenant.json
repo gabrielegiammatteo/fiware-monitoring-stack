@@ -15,10 +15,126 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
-  "iteration": 1554492639024,
+  "id": 10,
+  "iteration": 1554882383420,
   "links": [],
   "panels": [
+    {
+      "columns": [],
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 8,
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTargetBlank": true,
+          "linkUrl": "http://217.172.12.136:3000/d/Mi0bAMgZk/instance?orgId=1&var-instance_id=${__cell} ",
+          "mappingType": 1,
+          "pattern": "instance_id",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "instance",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "flavor",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "status",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "decimals": 2,
+          "pattern": "/.*/",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "expr": "os_instance{tenant=\"$tenant_name\"}",
+          "format": "table",
+          "instant": true,
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Panel Title",
+      "transform": "table",
+      "type": "table"
+    },
     {
       "aliasColors": {},
       "bars": false,
@@ -29,7 +145,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 6
       },
       "id": 6,
       "legend": {
@@ -119,7 +235,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 14
       },
       "id": 2,
       "interval": "",
@@ -208,7 +324,7 @@
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 22
       },
       "id": 4,
       "legend": {
@@ -301,22 +417,9 @@
       {
         "allValue": null,
         "current": {
-          "tags": [
-            {
-              "selected": true,
-              "text": "labrm.projects",
-              "values": [
-                "interopEHRate",
-                "cloudperfect testbed",
-                "DMCoach",
-                "ETICS",
-                "OPENREQ"
-              ],
-              "valuesText": "interopEHRate + cloudperfect testbed + DMCoach + ETICS + OPENREQ"
-            }
-          ],
-          "text": "DMCoach + ETICS + OPENREQ + cloudperfect testbed + interopEHRate",
-          "value": "DMCoach"
+          "tags": [],
+          "text": "MellusoM cloud",
+          "value": "MellusoM cloud"
         },
         "datasource": "Prometheus",
         "definition": "label_values(tenant)",
@@ -728,7 +831,7 @@
     ]
   },
   "timezone": "",
-  "title": "By Tenant",
-  "uid": "uVYqnweiz",
-  "version": 3
+  "title": "Tenant",
+  "uid": "uVYqnweasd",
+  "version": 4
 }
