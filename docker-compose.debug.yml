@@ -1,5 +1,10 @@
 version: "3"
 services:
+
+ grafana-db:
+   ports:
+     - "3306:3306"
+
  prometheus:
    ports:
       - "9090:9090"
