@@ -42,10 +42,14 @@ services:
     image: gabrielegiammatteo/fiware-prometheus-publisher:develop
     env_file:
       - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      fipromPushGatewayUrl: http://pushgateway:9091/metrics
     volumes:
-      - "${FIWARE_MON_CONFIG:-./}/fiprom-cache:/tmp/cache"
+      - fiprom_cache:/var/cache/fiprom
       - "${FIWARE_MON_CONFIG:-./}/fiprom-names:/fiprom-names:ro"
       - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/fiprom-groups:ro"
+    ports:
+      - "9099:9099"
 
   prometheus-openstack-exporter:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
@@ -55,6 +59,7 @@ services:
       - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf:ro"
 
 volumes:
-  grafana_data: {}
-  prometheus_data: {}
+  grafana_data:
+  prometheus_data:
   grafana_db:
+  fiprom_cache:

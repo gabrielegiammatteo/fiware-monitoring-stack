@@ -1,0 +1,9 @@
+version: "3"
+services:
+
+  collector_service:
+    image: fiprom_collector_service:0.0.1
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      dispatcherUrl: http://fiprom:9099/

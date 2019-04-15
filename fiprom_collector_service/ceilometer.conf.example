@@ -1,0 +1,22 @@
+#
+# Static configuration. It should not be changed
+#
+
+[DEFAULT]
+verbose = true
+debug = VAR_DEBUG
+use_stderr = true
+dispatcher = http
+
+# put here connection detailsfor rabbitmq
+[oslo_messaging_rabbit]
+rabbit_hosts = VAR_RABBITMQ_URL
+rabbit_userid = VAR_RABBITMQ_USER
+rabbit_password = VAR_RABBITMQ_PASSWORD
+
+[publisher]
+metering_secret = VAR_METERING_SECRET
+
+[dispatcher_http]
+target = VAR_DISPATCHER_URL
+timeout = 2
