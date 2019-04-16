@@ -2,7 +2,7 @@ version: "3"
 services:
 
   collector_service:
-    image: fiprom_collector_service:0.0.1
+    image: gabrielegiammatteo/fiware-monitoring-stack-ceilometer:develop
     env_file:
       - "${FIWARE_MON_CONFIG:-./}/config.env"
     environment:

@@ -8,6 +8,7 @@ debug = VAR_DEBUG
 use_stderr = true
 dispatcher = http
 
+
 # put here connection detailsfor rabbitmq
 [oslo_messaging_rabbit]
 rabbit_hosts = VAR_RABBITMQ_URL

@@ -1,0 +1,36 @@
+language: python
+python: 2.7
+sudo: required
+services: docker
+
+install: true
+script: true
+
+env:
+  global:
+    - IMAGE_NAME=gabrielegiammatteo/fiware-monitoring-stack-ceilometer
+    - REGISTRY_USER=gabrielegiammatteo
+    # REGISTRY_PASS=...
+    - secure: er/W6h5c++N+Pd48S+8RiOX0gQX8Dw+BNEVF8tHVgL+Lyw0RRSwUDJuY+Nf2oOXptcJePECHIkDHJ1HnASIuN9qnTm/q9WKz++4cwwqybdE6Rb/urfoZPNjMZQ4Ksus/tzGcrNhh/PLuD7gQKPo4q9ntI+Nan23fHt8yaB5gCHsd3N8vjUkbUEfJRpxNvJknbffO4JEa2vHVw8URvSQ1JaKbWJTuGsx4icNBRN039uawLIbVBQRxjHvOKFpidk/u+s7QVz6o2F7QG7FMbT2uwvlyWA7uKg5DutQJUzz+9eZke+7bcsxqTWbArbopwTbJyPT3aT/Lre6loA87rzyS6SDOrIyy9Gll4xD1R2WK22JsMVA53yeMVly4s28v6Gh1Ri6c7fJsPq70O0MMKpdn45661WSbZzmYzu7xfikjRMiDWo7Ne9WwdOj4HslLYskk0Wg1ZHUs9BV7oaK25CR1F+Sxxj0ZbRRuvO9hCJfgY9LviP4MiwyAy87obvsP0On8nbUugODVPA0Vf5vTy5VVM8Ub2QESpogx/oOL8//x3DdwxWo6hUAqss7F7GHxWqfHOt/enjKfrfnuZ2Z+mGCiYTi0ieuYu3E8Xk4CR3FbTiA2BgdDSycVdYvwR3kAhmFs0TuHHz8I1IyRLsjHVlqOSB6XKbuuhdJSIOJ/12tq1OA=
+
+before_deploy:
+  - docker pull "${IMAGE_NAME}:develop" || true
+  - docker build --pull --cache-from "${IMAGE_NAME}:develop" --tag "$IMAGE_NAME" .
+  - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
+  - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:develop"
+  - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${TRAVIS_TAG}"
+
+deploy:
+
+  # publish Docker development image
+  - provider: script
+    script: docker push "${IMAGE_NAME}:develop"
+    on:
+      all_branches: true
+
+  # publish Docker release image if it is a tag commit
+  - provider: script
+    script: docker push "${IMAGE_NAME}:${TRAVIS_TAG}"
+    on:
+      tags: true
+
