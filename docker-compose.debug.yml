@@ -8,14 +8,3 @@ services:
  prometheus:
    ports:
       - "9090:9090"
- fiprom:
-    volumes:
-      - "${FIWARE_MON_CONFIG:-./}/fiprom.log:/tmp/fiprom.log"
-
- prometheus-openstack-exporter:
-    ports:
-      - "9183:9183"
-
- pushgateway:
-   ports:
-     - "9091:9091"

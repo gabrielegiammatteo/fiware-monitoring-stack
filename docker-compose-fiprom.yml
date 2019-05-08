@@ -1,0 +1,24 @@
+
+# adds the fiprom component to get metrics from Ceilometer
+
+version: "3"
+services:
+
+  pushgateway:
+    image: prom/pushgateway:v0.7.0
+  
+  fiprom:
+    image: gabrielegiammatteo/fiware-prometheus-publisher:develop
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      fipromPushGatewayUrl: http://pushgateway:9091/metrics
+    volumes:
+      - fiprom_cache:/var/cache/fiprom
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-names:/fiprom-names:ro"
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/fiprom-groups:ro"
+    ports:
+      - "9099:9099"
+
+volumes:
+  fiprom_cache:

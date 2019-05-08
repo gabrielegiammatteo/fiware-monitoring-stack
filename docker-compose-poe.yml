@@ -1,0 +1,108 @@
+
+
+# Adds a POE for each FIWARE region
+
+# "Crete" "ae238b249be74ee1842d29eb6dc5cfb5"
+# "Lannion4" "72ea5ae5793e4e84a77c6e64687d8da4"
+# "Lannion5" "8d0ac0a490b641538fb29336c52d18bc"
+# "Noida" "28a6b4f533a245a88a86a0df5f8cb070"
+# "PiraeusU" "100ac47b37b645bcb7478deebae9e5a1"
+# "Senegal" "977e9c8ea0ea4f628d4f122efd72e651"
+# "SophiaAntipolis2" "2af6ed0649f34fa9a3cd197fa207e9d2"
+# "Spain2" "1d2d0090b0344e878954cd16cb8516f4"
+# "Vicenza" "25aa27bde3da4ba497800270ef178d2f"
+
+version: "3"
+services:
+
+  poe-crete:
+    image: gabrielegiammatteo/prometheus-openstack-exporter:develop
+    volumes:
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf:ro"
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      OS_REGION_NAME: Crete
+      OS_ENDPOINT_GROUP: ae238b249be74ee1842d29eb6dc5cfb5
+
+  poe-lannion4:
+    image: gabrielegiammatteo/prometheus-openstack-exporter:develop
+    volumes:
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf:ro"
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      OS_REGION_NAME: Lannion4
+      OS_ENDPOINT_GROUP: 72ea5ae5793e4e84a77c6e64687d8da4
+
+  poe-lannion5:
+    image: gabrielegiammatteo/prometheus-openstack-exporter:develop
+    volumes:
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf:ro"
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      OS_REGION_NAME: Lannion5
+      OS_ENDPOINT_GROUP: 8d0ac0a490b641538fb29336c52d18bc
+
+  poe-noida:
+    image: gabrielegiammatteo/prometheus-openstack-exporter:develop
+    volumes:
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf:ro"
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      OS_REGION_NAME: Noida
+      OS_ENDPOINT_GROUP: 28a6b4f533a245a88a86a0df5f8cb070
+
+  poe-pireausu:
+    image: gabrielegiammatteo/prometheus-openstack-exporter:develop
+    volumes:
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf:ro"
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      OS_REGION_NAME: PiraeusU
+      OS_ENDPOINT_GROUP: 100ac47b37b645bcb7478deebae9e5a1
+
+  poe-senegal:
+    image: gabrielegiammatteo/prometheus-openstack-exporter:develop
+    volumes:
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf:ro"
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      OS_REGION_NAME: Senegal
+      OS_ENDPOINT_GROUP: 977e9c8ea0ea4f628d4f122efd72e651
+
+  poe-sophiaantipolis2:
+    image: gabrielegiammatteo/prometheus-openstack-exporter:develop
+    volumes:
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf:ro"
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      OS_REGION_NAME: Lannion4
+      OS_ENDPOINT_GROUP: 72ea5ae5793e4e84a77c6e64687d8da4
+
+  poe-spain2:
+    image: gabrielegiammatteo/prometheus-openstack-exporter:develop
+    volumes:
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf:ro"
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      OS_REGION_NAME: Spain2
+      OS_ENDPOINT_GROUP: 1d2d0090b0344e878954cd16cb8516f4
+
+  poe-vicenza:
+    image: gabrielegiammatteo/prometheus-openstack-exporter:develop
+    volumes:
+      - "${FIWARE_MON_CONFIG:-./}/fiprom-groups:/etc/prometheus/tenant_group_file.conf:ro"
+    env_file:
+      - "${FIWARE_MON_CONFIG:-./}/config.env"
+    environment:
+      OS_REGION_NAME: Vicenza
+      OS_ENDPOINT_GROUP: 25aa27bde3da4ba497800270ef178d2f
+
+

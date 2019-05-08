@@ -38,7 +38,18 @@ scrape_configs:
 
   - job_name: 'poe'
     static_configs:
-      - targets: ['prometheus-openstack-exporter:9183']
+      - targets: [
+            'poe-crete:9183',
+            'poe-lannion4:9183',
+            'poe-lannion5:9183',
+            'poe-noida:9183',
+            'poe-pireausu:9183',
+            'poe-senegal:9183',
+            'poe-sophiaantipolis2:9183',
+            'poe-spain2:9183',
+            'poe-vicenza:9183'
+      ]
+
     metric_relabel_configs:
       - source_labels: [cloud]
         target_label: fiware_region
