@@ -82,8 +82,8 @@ services:
     env_file:
       - "${FIWARE_MON_CONFIG:-./}/config.env"
     environment:
-      OS_REGION_NAME: Lannion4
-      OS_ENDPOINT_GROUP: 72ea5ae5793e4e84a77c6e64687d8da4
+      OS_REGION_NAME: SophiaAntipolis2
+      OS_ENDPOINT_GROUP: 2af6ed0649f34fa9a3cd197fa207e9d2
 
   poe-spain2:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
