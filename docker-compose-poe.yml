@@ -24,6 +24,9 @@ services:
     environment:
       OS_REGION_NAME: Crete
       OS_ENDPOINT_GROUP: ae238b249be74ee1842d29eb6dc5cfb5
+      vcpuRatio: 16.0
+      ramRatio: 1.0
+      diskRatio: 1.0
 
   poe-lannion4:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
@@ -34,6 +37,9 @@ services:
     environment:
       OS_REGION_NAME: Lannion4
       OS_ENDPOINT_GROUP: 72ea5ae5793e4e84a77c6e64687d8da4
+      vcpuRatio: 8.0
+      ramRatio: 1.0
+      diskRatio: 1.0
 
   poe-lannion5:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
@@ -44,6 +50,9 @@ services:
     environment:
       OS_REGION_NAME: Lannion5
       OS_ENDPOINT_GROUP: 8d0ac0a490b641538fb29336c52d18bc
+      vcpuRatio: 8.0
+      ramRatio: 1.0
+      diskRatio: 1.0
 
   poe-noida:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
@@ -54,6 +63,9 @@ services:
     environment:
       OS_REGION_NAME: Noida
       OS_ENDPOINT_GROUP: 28a6b4f533a245a88a86a0df5f8cb070
+      vcpuRatio: 16.0
+      ramRatio: 1.0
+      diskRatio: 1.0
 
   poe-pireausu:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
@@ -64,6 +76,9 @@ services:
     environment:
       OS_REGION_NAME: PiraeusU
       OS_ENDPOINT_GROUP: 100ac47b37b645bcb7478deebae9e5a1
+      vcpuRatio: 8.0
+      ramRatio: 1.0
+      diskRatio: 1.0
 
   poe-senegal:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
@@ -74,6 +89,9 @@ services:
     environment:
       OS_REGION_NAME: Senegal
       OS_ENDPOINT_GROUP: 977e9c8ea0ea4f628d4f122efd72e651
+      vcpuRatio: 8.0
+      ramRatio: 1.0
+      diskRatio: 1.0
 
   poe-sophiaantipolis2:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
@@ -84,6 +102,9 @@ services:
     environment:
       OS_REGION_NAME: SophiaAntipolis2
       OS_ENDPOINT_GROUP: 2af6ed0649f34fa9a3cd197fa207e9d2
+      vcpuRatio: 8.0
+      ramRatio: 1.0
+      diskRatio: 1.0
 
   poe-spain2:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
@@ -94,6 +115,9 @@ services:
     environment:
       OS_REGION_NAME: Spain2
       OS_ENDPOINT_GROUP: 1d2d0090b0344e878954cd16cb8516f4
+      vcpuRatio: 8.0
+      ramRatio: 1.0
+      diskRatio: 1.0
 
   poe-vicenza:
     image: gabrielegiammatteo/prometheus-openstack-exporter:develop
@@ -104,5 +128,8 @@ services:
     environment:
       OS_REGION_NAME: Vicenza
       OS_ENDPOINT_GROUP: 25aa27bde3da4ba497800270ef178d2f
+      vcpuRatio: 4.0
+      ramRatio: 0.9
+      diskRatio: 1.0
 
 
