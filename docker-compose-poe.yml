@@ -129,7 +129,7 @@ services:
       OS_REGION_NAME: Vicenza
       OS_ENDPOINT_GROUP: 25aa27bde3da4ba497800270ef178d2f
       vcpuRatio: 4.0
-      ramRatio: 0.9
+      ramRatio: 1.0
       diskRatio: 1.0
 
 
